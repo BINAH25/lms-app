@@ -5,6 +5,7 @@ import { Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito'
 import { LinearGradient } from 'expo-linear-gradient'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { router } from 'expo-router'
+import { Platform } from 'react-native';
 
 const OnboardingScreen = () => {
   let [fontsLoaded, fontError] = useFonts({
@@ -118,6 +119,7 @@ const styles = StyleSheet.create({
   }, 
   titleText:{
     fontSize: hp("4%"),
+    color: Platform.OS === 'android' ? 'white' : 'black',
     textAlign:"center"
   },
   dscpWrapper:{
@@ -125,7 +127,7 @@ const styles = StyleSheet.create({
   },
   dscpText:{
     textAlign:'center',
-    color:"#575757",
+    color: Platform.OS === 'android' ? '#fff' : '#575757',
     fontSize:hp("2%")
   },
   buttonWrapper: {

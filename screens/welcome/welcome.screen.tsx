@@ -6,6 +6,8 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { onboardingSwiperData } from '@/constants/constant'
 import AppIntroSlider from 'react-native-app-intro-slider'
 import { router } from "expo-router";
+import { Platform } from 'react-native';
+
 import {
     responsiveHeight,
     responsiveWidth,
@@ -84,7 +86,7 @@ const WelcomeScreen = () => {
           renderNextButton={() => (
             <View style={commonStyles.welcomeButtonStyle}>
               <Text
-                style={[commonStyles.buttonText, { fontFamily: "Nunito_600SemiBold" }]}
+                style={[commonStyles.buttonText, { fontFamily: "Nunito_700Bold" }]}
               >
                 Next
               </Text>
@@ -93,7 +95,7 @@ const WelcomeScreen = () => {
           renderDoneButton={() => (
             <View style={commonStyles.welcomeButtonStyle}>
               <Text
-                style={[commonStyles.buttonText, { fontFamily: "Nunito_600SemiBold" }]}
+                style={[commonStyles.buttonText, { fontFamily: "Nunito_700Bold" }]}
               >
                 Done
               </Text>
@@ -138,11 +140,12 @@ const commonStyles = StyleSheet.create({
     },
     title: {
       fontSize: hp("3.5%"),
+      color: Platform.OS === 'android' ? 'white' : 'black',
       textAlign: "center",
     },
     description: {
       fontSize: hp("2.5%"),
-      color: "#575757",
+      color: Platform.OS === 'android' ? '#fff' : '#575757',
       textAlign: "center",
     },
     input: {
