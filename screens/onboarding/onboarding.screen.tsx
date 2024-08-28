@@ -5,6 +5,7 @@ import { Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito'
 import { LinearGradient } from 'expo-linear-gradient'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import { router } from 'expo-router'
+
 const OnboardingScreen = () => {
   let [fontsLoaded, fontError] = useFonts({
     Raleway_700Bold,
