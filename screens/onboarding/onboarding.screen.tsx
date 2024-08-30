@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View , Image, TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View , Image, TouchableOpacity, ImageBackground } from 'react-native'
 import React from 'react'
-import {useFonts, Raleway_700Bold } from '@expo-google-fonts/raleway'
+import { useFonts, Raleway_700Bold } from '@expo-google-fonts/raleway'
 import { Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito'
 import { LinearGradient } from 'expo-linear-gradient'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
@@ -19,16 +19,19 @@ const OnboardingScreen = () => {
   }
 
   return (
+    
     <LinearGradient 
-    colors={["#e5ecf9","f6f7f9"]}
-    style={styles.gradientStyle}>
+      colors={["#3168cf", "#b7cbf1"]}
+      style={styles.gradientStyle}>
+      
       <View style={styles.container}>
         <View>
           <Image 
-          source={require('@/assets/logo.png')}
-          style={ styles.logo}/>
+            source={require('@/assets/Online.png')}
+            style={ styles.logo}
+          />
           <Image 
-          source={require('@/assets/onboarding/shape_9.png')}
+            source={require('@/assets/onboarding/shape_9.png')}
           />
         </View>
 
@@ -43,11 +46,11 @@ const OnboardingScreen = () => {
           </Text>
 
           <Image 
-          source={require('@/assets/onboarding/shape_9.png')}
-          style={ styles.titleTextShape2}
-        />
-
+            source={require('@/assets/onboarding/shape_9.png')}
+            style={ styles.titleTextShape2}
+          />
         </View>
+
         <View>
           <Image 
             source={require('@/assets/onboarding/shape_6.png')}
@@ -57,7 +60,6 @@ const OnboardingScreen = () => {
           <Text style={[styles.titleText, {fontFamily:"Raleway_700Bold"}]}>
               Codex Technologies
           </Text>
-
         </View>
 
         <View style={styles.dscpWrapper}>
@@ -67,11 +69,12 @@ const OnboardingScreen = () => {
           <Text style={[styles.dscpText, {fontFamily:"Nunito_400Regular"} ]}>
             videos, quizzes & assignments
           </Text>
-
         </View>
+
         <TouchableOpacity 
-        style={styles.buttonWrapper}
-        onPress={()=> router.push("/(routes)/welcome")}>
+          style={styles.buttonWrapper}
+          onPress={()=> router.push("/(routes)/welcome")}
+        >
           <Text style={[styles.buttonText, {fontFamily:"Nunito_700Bold"}]}>
             Getting Started
           </Text>
@@ -80,25 +83,28 @@ const OnboardingScreen = () => {
       </View>
 
     </LinearGradient>
-   
   )
 }
 export default OnboardingScreen
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+  },
   gradientStyle:{
     flex:1,
     alignItems:'center',
     justifyContent:'center',
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
+    opacity: 0.9, // Adjust the opacity of the gradient if needed
   },
   container:{
     alignItems:'center',
     marginTop:50
   },
   logo:{
-    width: wp("23%"),
-    height: hp("10%")
+    width: wp("50%"),
+    height: hp("22%")
   },
   titleWraper:{
     flexDirection:'row'
@@ -143,8 +149,6 @@ const styles = StyleSheet.create({
   },
   welcomeButtonStyle:{
     backgroundColor: "#2467EC",
-    // width: responsiveWidth(88),
-    // height: responsiveHeight(5.5),
     alignSelf: "center",
     justifyContent: "center",
     alignItems: "center",
