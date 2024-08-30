@@ -9,7 +9,7 @@ export const onboardingSwiperData: onboardingSwiperDataType[] = [
     {
       id: 2,
       title: "Discover your passion, elevate your expertise",
-      description: "Our comprehensive our courses and expert",
+      description: "Our comprehensive courses and expert",
       sortDescrition: "instructors to guide every step.",
       image: require("@/assets/onboarding/intro_2.png"),
     },
